@@ -5,6 +5,4 @@ class Course < ApplicationRecord
   has_many :users, through: :course_enrollments
 
   has_one_attached :image
-
-  scope :by_course_id, ->(id) { where(id: id) }
 end

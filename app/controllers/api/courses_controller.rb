@@ -19,8 +19,7 @@ class Api::CoursesController < ApplicationController
   end
 
   def destroy
-    course = @user.courses.by_course_id(params[:id]).first
-    raise ActiveRecord::RecordNotFound, I18n.t("message.not_found.default") if course.blank?
+    course = @user.courses.find(params[:id])
 
     course.destroy
   end

@@ -18,7 +18,7 @@ class Api::CourseEnrollmentsController < ApplicationController
   end
 
   def update
-    @enrollment.update(course_enrollment_params)
+    @enrollment.update!(course_enrollment_params)
     @total = 1
   end
 

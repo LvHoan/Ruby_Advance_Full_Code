@@ -12,7 +12,7 @@ module ErrorHandling
 
   # 404
   def render_not_found(error)
-    message = error.message || I18n.t("message.not_found.default").presence
+    message = error.message || I18n.t("message.not_found").presence
 
     render json: { message: message }, status: :not_found
   end

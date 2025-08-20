@@ -20,11 +20,9 @@ class Api::LessonsController < ApplicationController
   end
 
   def destroy
-    lesson = @course.lessons.by_lesson_id(params[:id]).first
-    raise ActiveRecord::RecordNotFound, I18n.t("message.not_found.default") if lesson.blank?
+    lesson = @course.lessons.find(params[:id])
 
     lesson.destroy!
-    @total = 1
   end
 
   private
